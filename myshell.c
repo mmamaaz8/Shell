@@ -23,6 +23,24 @@
 
 int main(int argc, char *argv[])
 {
+    
+    char str[80] = "This is www.tutorialspoint.com  website";
+    const char s[2] = " ";
+    char *token;
+    
+    fgets(str, 50, stdin);
+
+    /* get the first token */
+    token = strtok(str, s);
+    
+    /* walk through other tokens */
+    while( token != NULL ) 
+    {
+	printf( " %s\n", token );
+	
+	token = strtok(NULL, s);
+    }
+
     // Input buffer and and commands
     char buffer[BUFFER_LEN] = { 0 };
     char command[BUFFER_LEN] = { 0 };
